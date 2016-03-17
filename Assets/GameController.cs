@@ -7,7 +7,6 @@ public class GameController : MonoBehaviour
     public int currentArea = 0;
     public int wave = 1;
     public int currentCannon = 0;
-<<<<<<< HEAD
     public int currentHealth;
     public int maxHeath;
     CameraController cameraController;
@@ -15,6 +14,8 @@ public class GameController : MonoBehaviour
     void Awake()
     {
         cameraController = Camera.main.GetComponent<CameraController>();
+        AudioSource audio = GetComponent<AudioSource>();
+        audio.Play();
     }
 
     void Start()
@@ -44,12 +45,5 @@ public class GameController : MonoBehaviour
             currentCannon = 3;
             cameraController.ActivateMovement(3);
         }
-=======
-
-    void Awake()
-    {
-        AudioSource audio = GetComponent<AudioSource>();
-        audio.Play();
->>>>>>> 4adc65e771f1ed1b61d94bcc02ef758846edc765
     }
 }
