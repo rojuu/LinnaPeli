@@ -11,6 +11,10 @@ public class GameController : MonoBehaviour
     public int maxHeath;
     CameraController cameraController;
     public GameObject gameOver;
+    bool isGameOver = false;
+    public GameObject castle;
+
+    Rigidbody[] castlePieces;
 
     void Awake()
     {
@@ -22,13 +26,26 @@ public class GameController : MonoBehaviour
     void Start()
     {
         currentHealth = maxHeath;
+        castlePieces = castle.GetComponentsInChildren<Rigidbody>();
     }
 
     void Update()
     {
+        if (Input.anyKeyDown && isGameOver)
+        {
+            Retry();
+        }
+
         if (currentHealth <= 0)
         {
             gameOver.SetActive(true);
+            isGameOver = true;
+            foreach(Rigidbody rig in castlePieces)
+            {
+                rig.isKinematic = false;
+                rig.useGravity = true;
+                rig.AddForce(new Vector3(Random.Range(-1000f, 1000f), Random.Range(-1000f, 1000f), Random.Range(-1000f, 1000f)));
+            }
         }
         else
         {
@@ -56,5 +73,10 @@ public class GameController : MonoBehaviour
             currentCannon = 3;
             cameraController.ActivateMovement(3);
         }
+    }
+
+    public void Retry()
+    {
+        Application.LoadLevel(Application.loadedLevel);
     }
 }

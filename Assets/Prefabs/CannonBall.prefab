@@ -91,6 +91,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af8895ed3875364448695d92d81ac86b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blood: {fileID: 122596, guid: 25e1a760446e75e4daa155e6e5b914bc, type: 2}
 --- !u!135 &13585854
 SphereCollider:
   m_ObjectHideFlags: 1
