@@ -10,6 +10,7 @@ public class GameController : MonoBehaviour
     public int currentHealth;
     public int maxHeath;
     CameraController cameraController;
+    public GameObject gameOver;
 
     void Awake()
     {
@@ -25,6 +26,16 @@ public class GameController : MonoBehaviour
 
     void Update()
     {
+        if (currentHealth <= 0)
+        {
+            gameOver.SetActive(true);
+        }
+        else
+        {
+            gameOver.SetActive(false);
+        }
+
+
         if (Input.GetKeyDown(KeyCode.Alpha1) && !cameraController.isMoving)
         {
             currentCannon = 0;

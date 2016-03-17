@@ -244,60 +244,23 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22408416, guid: 74113f81d965a2d46a66103d79ee9e29, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22408416, guid: 74113f81d965a2d46a66103d79ee9e29, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22466940, guid: 74113f81d965a2d46a66103d79ee9e29, type: 2}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22466940, guid: 74113f81d965a2d46a66103d79ee9e29, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22466940, guid: 74113f81d965a2d46a66103d79ee9e29, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11495876, guid: 74113f81d965a2d46a66103d79ee9e29, type: 2}
-      propertyPath: m_FontData.m_Font
-      value: 
-      objectReference: {fileID: 12800000, guid: 3d8128b7bdac52f4181ed15578c7bf51,
-        type: 3}
-    - target: {fileID: 11495876, guid: 74113f81d965a2d46a66103d79ee9e29, type: 2}
-      propertyPath: m_FontData.m_FontSize
-      value: 32
-      objectReference: {fileID: 0}
-    - target: {fileID: 11495876, guid: 74113f81d965a2d46a66103d79ee9e29, type: 2}
-      propertyPath: m_FontData.m_MinSize
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11495876, guid: 74113f81d965a2d46a66103d79ee9e29, type: 2}
-      propertyPath: m_FontData.m_HorizontalOverflow
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11495876, guid: 74113f81d965a2d46a66103d79ee9e29, type: 2}
-      propertyPath: m_FontData.m_VerticalOverflow
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 22405466, guid: 74113f81d965a2d46a66103d79ee9e29, type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: 44
-      objectReference: {fileID: 0}
-    - target: {fileID: 22405466, guid: 74113f81d965a2d46a66103d79ee9e29, type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: 37
-      objectReference: {fileID: 0}
-    - target: {fileID: 22405466, guid: 74113f81d965a2d46a66103d79ee9e29, type: 2}
-      propertyPath: m_SizeDelta.x
-      value: 33
-      objectReference: {fileID: 0}
-    - target: {fileID: 22405466, guid: 74113f81d965a2d46a66103d79ee9e29, type: 2}
-      propertyPath: m_SizeDelta.y
-      value: 31
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 74113f81d965a2d46a66103d79ee9e29, type: 2}
@@ -438,6 +401,10 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
+--- !u!1 &619225020 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 195100, guid: 74113f81d965a2d46a66103d79ee9e29, type: 2}
+  m_PrefabInternal: {fileID: 263412142}
 --- !u!1 &772023857
 GameObject:
   m_ObjectHideFlags: 0
@@ -540,9 +507,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 483af9cbf4711f54196dec79a8da40ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  score: 0
   currentArea: 0
   wave: 1
   currentCannon: 0
+  currentHealth: 10
+  maxHeath: 10
+  gameOver: {fileID: 619225020}
 --- !u!4 &772023860
 Transform:
   m_ObjectHideFlags: 0
