@@ -18,6 +18,8 @@ public class GameController : MonoBehaviour
 
     void Awake()
     {
+        Cursor.lockState = CursorLockMode.Locked;
+
         cameraController = Camera.main.GetComponent<CameraController>();
         AudioSource audio = GetComponent<AudioSource>();
         audio.Play();
