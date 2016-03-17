@@ -110,8 +110,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 203067324}
   m_LocalRotation: {x: -0.53872144, y: 0.03856782, z: -0.0101273665, w: 0.8415398}
-  m_LocalPosition: {x: 0.008687122, y: 0.6230112, z: -0.59362}
-  m_LocalScale: {x: 0.1577832, y: 0.40720886, z: 0.12780212}
+  m_LocalPosition: {x: 0.006, y: 0.377, z: -0.49}
+  m_LocalScale: {x: 0.1577832, y: 0.6555665, z: 0.12780212}
   m_Children:
   - {fileID: 2059105510}
   m_Father: {fileID: 462195957}
@@ -325,6 +325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a977d40dc903f8a4f86284996daa388e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  turret: {fileID: 203067324}
 --- !u!1 &599212257
 GameObject:
   m_ObjectHideFlags: 0
