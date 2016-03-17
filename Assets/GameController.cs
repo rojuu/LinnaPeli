@@ -5,4 +5,5 @@ public class GameController : MonoBehaviour
 {
     public int currentArea = 0;
     public int wave = 1;
+    public int currentCannon = 0;
 }
