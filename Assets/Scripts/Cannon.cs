@@ -10,6 +10,8 @@ public class Cannon : MonoBehaviour {
     public float delay = 0.2f;
     float time;
 
+    public float health = 1f;
+
 	// Use this for initialization
 	void Start () {
         time = delay;
