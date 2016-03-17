@@ -7,9 +7,12 @@ public class Cannon : MonoBehaviour {
     public GameObject cannonBall;
     public GameObject shootLocation;
 
+    public float delay = 0.2f;
+    float time;
+
 	// Use this for initialization
 	void Start () {
-	    
+        time = delay;
 	}
 	
 	// Update is called once per frame
@@ -17,8 +20,11 @@ public class Cannon : MonoBehaviour {
 	    transform.Rotate(new Vector3(0, Input.GetAxis("Mouse X"), 0)  * Time.deltaTime  * 100);
         barrel.transform.Rotate(new Vector3(Input.GetAxis("Mouse Y"), 0, 0) * Time.deltaTime * 100);
 
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        time += Time.deltaTime;
+        
+        if (Input.GetKey(KeyCode.Mouse0) && time>delay)
         {
+            time = 0f;
             GameObject ammo = (GameObject)Instantiate(cannonBall, shootLocation.transform.position, shootLocation.transform.rotation);
             ammo.GetComponent<Rigidbody>().AddForce(shootLocation.transform.forward * 1000);
         }

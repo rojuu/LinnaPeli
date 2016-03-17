@@ -211,6 +211,7 @@ MonoBehaviour:
   barrel: {fileID: 185700}
   cannonBall: {fileID: 123560, guid: 34a5386bda31bad4aa9a700eb1e21253, type: 2}
   shootLocation: {fileID: 103534}
+  delay: 0.2
 --- !u!114 &11479762
 MonoBehaviour:
   m_ObjectHideFlags: 1
