@@ -6,6 +6,8 @@ public class EnemyController : MonoBehaviour
 {
     Vector3[] path = new Vector3[3];
 
+    public float speed;
+
     void Update()
     {
 
@@ -17,12 +19,11 @@ public class EnemyController : MonoBehaviour
         path[1] = (startpoint + endpoint) / 2 + new Vector3(0f,flyHeight,0f);
         path[2] = endpoint;
 
-        iTween.MoveTo(gameObject, iTween.Hash("position", endpoint, "path", path, "orienttopath", true, "looptype", iTween.LoopType.none, "easetype", iTween.EaseType.linear, "oncomplete", "PathEnd", "speed", 40f));
+        iTween.MoveTo(gameObject, iTween.Hash("position", endpoint, "path", path, "orienttopath", true, "looptype", iTween.LoopType.none, "easetype", iTween.EaseType.linear, "oncomplete", "PathEnd", "speed", speed));
      }
 
     void PathEnd()
     {
-        Debug.Log("Path ended");
         Destroy(gameObject);
     }
 }
