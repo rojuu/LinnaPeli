@@ -10,25 +10,31 @@ public class Cannon : MonoBehaviour {
     public float delay = 0.2f;
     float time;
 
-    public float health = 1f;
+    public int id = 0;
 
+    GameController gameController;
+    
 	// Use this for initialization
 	void Start () {
+        gameController = GameObject.FindWithTag("GameController").GetComponent<GameController>();
         time = delay;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	    transform.Rotate(new Vector3(0, Input.GetAxis("Mouse X"), 0)  * Time.deltaTime  * 100);
-        barrel.transform.Rotate(new Vector3(0, Input.GetAxis("Mouse Y"), 0) * Time.deltaTime * 100);
-
-        time += Time.deltaTime;
-        
-        if (Input.GetKey(KeyCode.Mouse0) && time>delay)
+        if (id == gameController.currentCannon)
         {
-            time = 0f;
-            GameObject ammo = (GameObject)Instantiate(cannonBall, shootLocation.transform.position, shootLocation.transform.rotation);
-            ammo.GetComponent<Rigidbody>().AddForce(shootLocation.transform.forward * 1000);
+            transform.Rotate(new Vector3(0, Input.GetAxis("Mouse X"), 0) * Time.deltaTime * 100);
+            barrel.transform.Rotate(new Vector3(0, Input.GetAxis("Mouse Y"), 0) * Time.deltaTime * 100);
+
+            time += Time.deltaTime;
+
+            if (Input.GetKey(KeyCode.Mouse0) && time > delay)
+            {
+                time = 0f;
+                GameObject ammo = (GameObject)Instantiate(cannonBall, shootLocation.transform.position, shootLocation.transform.rotation);
+                ammo.GetComponent<Rigidbody>().AddForce(shootLocation.transform.forward * 1000);
+            } 
         }
 	}
 }
