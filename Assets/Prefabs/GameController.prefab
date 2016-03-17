@@ -43,6 +43,8 @@ MonoBehaviour:
   currentArea: 0
   wave: 1
   currentCannon: 0
+  currentHealth: 0
+  maxHeath: 100
 --- !u!114 &11422638
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -60,16 +62,52 @@ MonoBehaviour:
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     endpoints:
     - {fileID: 0}
-  enemyPrefab: {fileID: 129734, guid: 98d0ace782e552041803a1174a341fdb, type: 2}
-  flyHeight: 10
+  - startpoints:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    endpoints:
+    - {fileID: 0}
+  - startpoints:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    endpoints:
+    - {fileID: 0}
+  - startpoints:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    endpoints:
+    - {fileID: 0}
+  indicators:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  enemyPrefab: {fileID: 121202, guid: 6a7fff461d1819f46a9f30d4bcddc20d, type: 2}
+  flyHeight: 30
   spawnDelay: 1
   currentWaveEnemies: 0
-  increasedEnemiesPerWave: 5
-  cannonActivationWaves: 
-  waveDelay: 3
+  increasedEnemiesPerWave: 3
+  cannonActivationWaves: 050000000a0000000f000000
+  waveDelay: 4
   waveState: 0
+  enemyPools: 
+  activeEnemies: 
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

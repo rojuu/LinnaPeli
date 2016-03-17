@@ -12,6 +12,7 @@ public class PointAreas
 public class EnemySpawner : MonoBehaviour
 {
     public PointAreas[] pointAreas;
+    public WaveIndicator[] indicators;
     public GameObject enemyPrefab;
     public float flyHeight;
     public float spawnDelay;
@@ -23,13 +24,16 @@ public class EnemySpawner : MonoBehaviour
     public WaveState waveState = WaveState.Start;
 
     GameController gameController;
-    int[] enemyPools;
+    public int[] enemyPools;
+    public int[] activeEnemies;
     float spawnTimer = 0f;
 
     void Awake()
     {
         gameController = GetComponent<GameController>();
         enemyPools = new int[pointAreas.Length];
+        activeEnemies = new int[pointAreas.Length];
+
     }
 
     void Start()
@@ -55,6 +59,18 @@ public class EnemySpawner : MonoBehaviour
 
             default:
                 break;
+        }
+
+        for (int i = 0; i < enemyPools.Length; i++)
+        {
+            if (activeEnemies[i] > 0)
+            {
+                indicators[i].indicate = true;
+            }
+            else
+            {
+                indicators[i].indicate = false;
+            }
         }
     }
 
@@ -95,7 +111,7 @@ public class EnemySpawner : MonoBehaviour
             {
                 int randomOffset = Random.Range(-currentWaveEnemies / 10, currentWaveEnemies / 10);
                 enemyPools[i] = currentWaveEnemies / cannonCount + randomOffset;
-                undistributedEnemies -= randomOffset;
+                undistributedEnemies -= currentWaveEnemies / cannonCount + randomOffset;
             }
         }
     }
@@ -125,13 +141,14 @@ public class EnemySpawner : MonoBehaviour
             if (spawnTimer >= spawnDelay)
             {
                 int random = Random.Range(0, availablePools.Count);
+                int random2 = availablePools[random];
 
                 spawnTimer = 0f;
 
-                enemyPools[random]--;
+                enemyPools[random2]--;
                 currentWaveEnemies--;
 
-                SpawnEnemy(availablePools[random]);
+                SpawnEnemy(random2);
             }
         }
     }
@@ -151,11 +168,13 @@ public class EnemySpawner : MonoBehaviour
 
     void SpawnEnemy(int spawnarea)
     {
+        activeEnemies[spawnarea]++;
+
         int random = Random.Range(0, pointAreas[spawnarea].startpoints.Length);
         int random2 = Random.Range(0, pointAreas[spawnarea].endpoints.Length);
 
         GameObject enemy = (GameObject)Instantiate(enemyPrefab, pointAreas[spawnarea].startpoints[random].position, Quaternion.identity);
 
-        enemy.GetComponent<EnemyController>().Activate(pointAreas[spawnarea].startpoints[random].position, pointAreas[spawnarea].endpoints[random2].position, flyHeight);
+        enemy.GetComponent<EnemyController>().Activate(pointAreas[spawnarea].startpoints[random].position, pointAreas[spawnarea].endpoints[random2].position, flyHeight, spawnarea);
     }
 }

@@ -33,7 +33,7 @@ public class Cannon : MonoBehaviour {
             {
                 time = 0f;
                 GameObject ammo = (GameObject)Instantiate(cannonBall, shootLocation.transform.position, shootLocation.transform.rotation);
-                ammo.GetComponent<Rigidbody>().AddForce(shootLocation.transform.forward * 1000);
+                ammo.GetComponent<Rigidbody>().AddForce(shootLocation.transform.forward * 10000);
             } 
         }
 	}
