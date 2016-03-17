@@ -32,8 +32,10 @@ public class Cannon : MonoBehaviour {
             if (Input.GetKey(KeyCode.Mouse0) && time > delay)
             {
                 time = 0f;
+                AudioSource audio = GetComponent<AudioSource>();
+                audio.Play();
                 GameObject ammo = (GameObject)Instantiate(cannonBall, shootLocation.transform.position, shootLocation.transform.rotation);
-                ammo.GetComponent<Rigidbody>().AddForce(shootLocation.transform.forward * 1000);
+                ammo.GetComponent<Rigidbody>().AddForce(shootLocation.transform.forward * 10000);
             } 
         }
 	}

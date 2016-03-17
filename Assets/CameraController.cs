@@ -10,7 +10,7 @@ public class CameraController : MonoBehaviour
     Quaternion startrotation;
     int targetpointIndex = 0;
     float moveTimer = 0f;
-    bool isMoving = false;
+    public bool isMoving = false;
 
     void Update()
     {
