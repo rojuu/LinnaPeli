@@ -18,7 +18,7 @@ public class Cannon : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	    transform.Rotate(new Vector3(0, Input.GetAxis("Mouse X"), 0)  * Time.deltaTime  * 100);
-        barrel.transform.Rotate(new Vector3(Input.GetAxis("Mouse Y"), 0, 0) * Time.deltaTime * 100);
+        barrel.transform.Rotate(new Vector3(0, Input.GetAxis("Mouse Y"), 0) * Time.deltaTime * 100);
 
         time += Time.deltaTime;
         

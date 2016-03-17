@@ -32,6 +32,10 @@ public class WaveIndicator : MonoBehaviour {
                 gameObject.GetComponent<Image>().color = Color.red;
             }
         }
+        else if (!indicate)
+        {
+            gameObject.GetComponent<Image>().color = Color.white;
+        }
 	    
 	}
 }
