@@ -8,21 +8,25 @@ public class EnemyController : MonoBehaviour
     EnemySpawner spawnerController;
     GameController gameController;
     int areaIndex;
+    Vector3 randomRotation;
 
     public float speed;
 
     void Awake()
     {
         spawnerController = GameObject.FindWithTag("GameController").GetComponent<EnemySpawner>();
+        gameController = GameObject.FindWithTag("GameController").GetComponent<GameController>();
     }
 
     void Update()
     {
-        
+        transform.Rotate(randomRotation);
     }
 
     public void Activate(Vector3 startpoint, Vector3 endpoint, float flyHeight, int spawnArea)
     {
+        randomRotation = new Vector3(Random.Range(-2f, 2f), Random.Range(-2f, 2f), Random.Range(-2f, 2f));
+
         areaIndex = spawnArea;
 
         path[0] = startpoint;
@@ -34,6 +38,7 @@ public class EnemyController : MonoBehaviour
 
     void PathEnd()
     {
+        gameController.currentHealth--;
         spawnerController.activeEnemies[areaIndex]--;
         Destroy(gameObject);
     }

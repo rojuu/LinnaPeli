@@ -35,7 +35,7 @@ public class Cannon : MonoBehaviour {
                 AudioSource audio = GetComponent<AudioSource>();
                 audio.Play();
                 GameObject ammo = (GameObject)Instantiate(cannonBall, shootLocation.transform.position, shootLocation.transform.rotation);
-                ammo.GetComponent<Rigidbody>().AddForce(shootLocation.transform.forward * 10000);
+                ammo.GetComponent<Rigidbody>().AddForce(shootLocation.transform.forward * 5000);
             } 
         }
 	}
