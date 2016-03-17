@@ -1,4 +1,0 @@
-sceneSetups:
-- path: Assets/ronin testi.unity
-  isLoaded: 1
-  isActive: 1
