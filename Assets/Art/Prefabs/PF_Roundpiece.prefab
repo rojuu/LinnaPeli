@@ -11,6 +11,7 @@ GameObject:
   - 33: {fileID: 3321058}
   - 23: {fileID: 2387292}
   - 95: {fileID: 9539474}
+  - 64: {fileID: 6451826}
   m_Layer: 0
   m_Name: wall4
   m_TagString: Untagged
@@ -39,8 +40,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 182292}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: -1, z: 0, w: 0.000002324581}
+  m_LocalPosition: {x: -0, y: -0, z: 28.74}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 483038}
@@ -92,6 +93,18 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 153298}
+  m_Mesh: {fileID: 4300000, guid: 4349f126a7d5416409286b9eb1308f05, type: 3}
+--- !u!64 &6451826
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 153298}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
   m_Mesh: {fileID: 4300000, guid: 4349f126a7d5416409286b9eb1308f05, type: 3}
 --- !u!95 &9539474
 Animator:
